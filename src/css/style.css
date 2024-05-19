@@ -1,0 +1,63 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+/** CSS DARK THEME MIXED SURFACE COLORS */
+
+    --color-surface-mixed-100:  #1c4071;
+    --color-surface-mixed-200:  #395380;
+    --color-surface-mixed-300:  #52668f;
+    --color-surface-mixed-400:  #6a7a9f;
+    --color-surface-mixed-500:  #828fae;
+    --color-surface-mixed-600:  #9aa4be;
+}
+
+header{
+    background-color: var(--color-surface-mixed-200);
+    padding: 15px;
+    height: 150px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+    background-color: red;
+    justify-content: space-between;
+}
+
+.nav__left{
+    background:green;
+    width: 40%;
+}
+
+.nav__right{
+    background-color: blue;
+    width: 40%;
+}
+
+.nav__logo{
+    width:140px;
+}
+
+.nav__logo--img{
+}
+/*
+.nav__link{
+    background-color: blueviolet;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 20px;
+    font-size: 1.5rem;
+    padding: 20px 30px; }*/
+
+
