@@ -1,3 +1,7 @@
+/* Fuentes de google fonts para testiar */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 *,::after,::before{
     margin: 0;
     padding: 0;
@@ -6,7 +10,8 @@
 
 :root{
 /** CSS DARK THEME MIXED SURFACE COLORS */
-
+    --font-family-1:"Poetsen One", sans-serif;
+    --font-family-2:"Roboto", sans-serif;
     --color-surface-mixed-100:  #1c4071;
     --color-surface-mixed-200:  #395380;
     --color-surface-mixed-300:  #52668f;
@@ -15,49 +20,68 @@
     --color-surface-mixed-600:  #9aa4be;
 }
 
-header{
-    background-color: var(--color-surface-mixed-200);
-    padding: 15px;
-    height: 150px;
+body{
+    width: 100svw;
+    height: 100svh;
 }
+
 
 a{
     text-decoration: none;
     color: black;
 }
 
-.nav{
-    display: flex;
+header{
+    --height-header:80px;
     width: 100%;
-    height: 100%;
-    padding: 0 100px;
-    background-color: red;
+    height: var(--height-header);
+    padding-inline: 50px;
+    background-color: var(--color-surface-mixed-100);
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* align-items: center; */
 }
 
-.nav__left{
-    background:green;
-    width: 40%;
+.logo{
+    width: 30%;
+
+    .logo__img{
+        width: 70%;
+    }
 }
 
-.nav__right{
-    background-color: blue;
-    width: 40%;
+.nav{
+    width: 30%;
+
+    .nav__list{
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+
+    .nav__item{
+        width: 30%;
+        height: var(--height-header);
+    }
+
+    .nav__item--link{
+        display: block;
+        line-height: var(--height-header);
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: var(--font-family-2);
+        font-weight: 600;
+        letter-spacing: 0.25rem;
+    }
 }
 
-.nav__logo{
-    width:140px;
-}
 
-.nav__logo--img{
-}
-/*
-.nav__link{
-    background-color: blueviolet;
-    width: fit-content;
-    height: fit-content;
-    margin: 0 20px;
-    font-size: 1.5rem;
-    padding: 20px 30px; }*/
+
+
+
+
 
 
