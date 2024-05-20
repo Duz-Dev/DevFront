@@ -9,6 +9,8 @@
 }
 
 :root{
+    --mg-bottom:20px;
+    --height-header:80px;
 /** CSS DARK THEME MIXED SURFACE COLORS */
     --font-family-1:"Poetsen One", sans-serif;
     --font-family-2:"Roboto", sans-serif;
@@ -21,8 +23,16 @@
 }
 
 body{
-    width: 100svw;
-    height: 100svh;
+width: 100vw;
+}
+
+
+.content{
+    background-color: var(--color-surface-mixed-200);
+    width: 95%;
+    margin-inline:auto;
+    margin-bottom: var(--mg-bottom);
+    min-height: 5svh; /*Esto solo es para que respiren los contenedores, puede ser eliminado sin problemas*/
 }
 
 
@@ -31,8 +41,10 @@ a{
     color: black;
 }
 
+/*-----------------HEADER---------------------------*/
+
+
 header{
-    --height-header:80px;
     width: 100%;
     height: var(--height-header);
     padding-inline: 50px;
@@ -40,7 +52,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* align-items: center; */
+    margin-bottom: var(--mg-bottom);
 }
 
 .logo{
@@ -78,10 +90,41 @@ header{
     }
 }
 
+/*--------------------------------------------*/
+/*-------------------CARRUSEL-------------------------*/
 
+.carrusel{
+    height: 500px;
+    line-height: 500px;
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    font-family: var(--font-family-2);
+}
 
+/*--------------------------------------------*/
 
+@media (width <= 900px) {
+    header{
+        --height-header:60px;
+        justify-content:initial;
+        padding-inline: 0;
+    }
 
+    .logo__img{
+        width: 100% !important;
+    }
+
+    .nav{
+        width: 70%;
+    }
+    .nav__item{
+        height: var(--height-header);
+    }
+    .nav__item--link{
+        font-size: 1rem !important;
+    }
+  }
 
 
 
