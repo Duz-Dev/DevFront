@@ -2,41 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-*,::after,::before{
+*,
+::after,
+::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --mg-bottom:20px;
-    --height-header:80px;
-/** CSS DARK THEME MIXED SURFACE COLORS */
-    --font-family-1:"Poetsen One", sans-serif;
-    --font-family-2:"Roboto", sans-serif;
-    --color-surface-mixed-100:  #1c4071;
-    --color-surface-mixed-200:  #395380;
-    --color-surface-mixed-300:  #52668f;
-    --color-surface-mixed-400:  #6a7a9f;
-    --color-surface-mixed-500:  #828fae;
-    --color-surface-mixed-600:  #9aa4be;
+:root {
+    --mg-bottom: 20px;
+    --height-header: 80px;
+    /** CSS DARK THEME MIXED SURFACE COLORS */
+    --font-family-1: "Poetsen One", sans-serif;
+    --font-family-2: "Roboto", sans-serif;
+    --color-surface-mixed-100: #1c4071;
+    --color-surface-mixed-200: #395380;
+    --color-surface-mixed-300: #52668f;
+    --color-surface-mixed-400: #6a7a9f;
+    --color-surface-mixed-500: #828fae;
+    --color-surface-mixed-600: #9aa4be;
 }
 
-body{
-width: 100vw;
+body {
+    width: 100vw;
 }
 
 
-.content{
+.content {
     background-color: var(--color-surface-mixed-200);
     width: 95%;
-    margin-inline:auto;
+    margin-inline: auto;
     margin-bottom: var(--mg-bottom);
-    min-height: 5svh; /*Esto solo es para que respiren los contenedores, puede ser eliminado sin problemas*/
+    min-height: 5svh;
+    /*Esto solo es para que respiren los contenedores, puede ser eliminado sin problemas*/
 }
 
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -44,7 +47,7 @@ a{
 /*-----------------HEADER---------------------------*/
 
 
-header{
+header {
     width: 100%;
     height: var(--height-header);
     padding-inline: 50px;
@@ -55,30 +58,30 @@ header{
     margin-bottom: var(--mg-bottom);
 }
 
-.logo{
+.logo {
     width: 30%;
 
-    .logo__img{
+    .logo__img {
         width: 70%;
     }
 }
 
-.nav{
+.nav {
     width: 30%;
 
-    .nav__list{
+    .nav__list {
         display: flex;
         list-style: none;
         justify-content: space-evenly;
         height: 100%;
     }
 
-    .nav__item{
+    .nav__item {
         width: 30%;
         height: var(--height-header);
     }
 
-    .nav__item--link{
+    .nav__item--link {
         display: block;
         line-height: var(--height-header);
         color: #fff;
@@ -89,7 +92,7 @@ header{
         letter-spacing: 0.25rem;
     }
 
-    .nav__item:hover{
+    .nav__item:hover {
         text-decoration: underline;
         text-decoration-color: #fff;
     }
@@ -98,7 +101,8 @@ header{
 /*--------------------------------------------*/
 /*-------------------CARRUSEL-------------------------*/
 
-.carrusel{
+/*
+.carrusel {
     height: 500px;
     line-height: 500px;
     text-align: center;
@@ -106,18 +110,74 @@ header{
     color: #fff;
     font-family: var(--font-family-2);
 }
+*/
+.carousel {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel img {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 20%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+@keyframes carouselAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.carousel img:nth-child(1) {
+    animation: carouselAnimation 10s infinite;
+}
+
+.carousel img:nth-child(2) {
+    animation: carouselAnimation 10s infinite 3s;
+}
+
+.carousel img:nth-child(3) {
+    animation: carouselAnimation 10s infinite 6s;
+}
 
 
 /*--Redes Sociales--*/
 
-.redes{
+.redes {
     background-color: var(--color-surface-mixed-100);
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-[class^="redes__item"]{
+[class^="redes__item"] {
     border-bottom: 3px solid var(--color-surface-mixed-600);
     border-top: 3px solid var(--color-surface-mixed-600);
     display: inline-flex;
@@ -128,18 +188,20 @@ header{
     font-family: var(--font-family-1);
 }
 
-.redes__item--first{
+.redes__item--first {
     border-left: 3px solid var(--color-surface-mixed-600);
 }
-.redes__item--last{
+
+.redes__item--last {
     border-right: 3px solid var(--color-surface-mixed-600);
 }
-.redes__item--middle{
+
+.redes__item--middle {
     border-left: 3px solid var(--color-surface-mixed-600);
     border-right: 3px solid var(--color-surface-mixed-600);
 }
 
-[class^="redes__item"] a{
+[class^="redes__item"] a {
     color: rgb(70, 125, 188);
     font-size: 2rem;
     letter-spacing: 0.25rem;
@@ -149,19 +211,19 @@ header{
     line-height: 250px;
 }
 
-[class^="redes__item"] a:hover{
+[class^="redes__item"] a:hover {
     color: #fff;
 }
 
 /*--perfiles--*/
-.creators{
+.creators {
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-[class^="creators__item"]{
+[class^="creators__item"] {
     background-color: var(--color-surface-mixed-300);
     border-bottom: 3px solid var(--color-surface-mixed-600);
     border-top: 3px solid var(--color-surface-mixed-600);
@@ -175,7 +237,7 @@ header{
     border-radius: 5%;
 }
 
-[class^="creators__item"]:hover{
+[class^="creators__item"]:hover {
     color: #fff;
 
 }
@@ -183,25 +245,26 @@ header{
 
 /*--------------------------------------------*/
 
-@media (width <= 900px) {
-    header{
-        --height-header:60px;
-        justify-content:initial;
+@media (width <=900px) {
+    header {
+        --height-header: 60px;
+        justify-content: initial;
         padding-inline: 0;
     }
 
-    .logo__img{
+    .logo__img {
         width: 100% !important;
     }
 
-    .nav{
+    .nav {
         width: 70%;
     }
-    .nav__item{
+
+    .nav__item {
         height: var(--height-header);
     }
-    .nav__item--link{
+
+    .nav__item--link {
         font-size: 1rem !important;
     }
 }
-
